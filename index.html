@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Praktikum Pengembangan Aplikasi Web</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .header p {
+            color: #64748b;
+            font-size: 16px;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .card {
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 25px;
+            transition: 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            border-color: #38bdf8;
+        }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e0f2fe;
+            border-radius: 14px;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #64748b;
+        }
+        .arrow {
+            display: inline-block;
+            margin-top: 18px;
+            color: #0284c7;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="icon">💻</div>
+            <h1>Pengenalan HTML</h1>
+            <p>Praktikum Pengembangan Aplikasi Web</p>
+        </div>
+
+        <div class="projects">
+
+            <a href="form.html" class="card">
+                <div class="card-icon">📝</div>
+                <h2>Form HTML</h2>
+                <p>
+                    Halaman yang berisi latihan pembuatan
+                    form menggunakan HTML.
+                </p>
+                <span class="arrow">Lihat Tugas →</span>
+            </a>
+
+            <a href="semantic.html" class="card">
+                <div class="card-icon">🏗️</div>
+                <h2>Semantic HTML</h2>
+                <p>
+                    Contoh penggunaan elemen semantic
+                    dalam struktur halaman HTML.
+                </p>
+                <span class="arrow">Lihat Tugas →</span>
+            </a>
+
+            <a href="tugas.html" class="card">
+                <div class="card-icon">📚</div>
+                <h2>Tugas HTML</h2>
+                <p>
+                    Penggunaan struktur dan elemen-elemen 
+					dasar dokumen HTML.
+                </p>
+                <span class="arrow">Lihat Tugas →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
