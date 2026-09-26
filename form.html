@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        fieldset {
+            border: 1px solid #777;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 600px;
+        }
+        legend {
+            font-weight: normal;
+            padding: 0 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            padding: 5px 0;
+            vertical-align: top;
+        }
+        td:first-child {
+            width: 200px;
+        }
+        td:nth-child(2) {
+            width: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="url"],
+        textarea,
+        select {
+            font-family: inherit;
+        }
+        .btn-group {
+            margin-top: 10px;
+        }
+        .btn-group input {
+            padding: 2px 10px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form Registrasi</h2>
+
+    <form action="#" method="POST">
+        
+        <!-- Section Biodata -->
+        <fieldset>
+            <legend>Biodata</legend>
+            <table>
+                <tr>
+                    <td>Nama Mahasiswa</td>
+                    <td>:</td>
+                    <td><input type="text" name="nama" placeholder="Nama Anda" size="30" required></td>
+                </tr>
+                <tr>
+                    <td>No Induk Mahasiswa (NIM)</td>
+                    <td>:</td>
+                    <td><input type="number" value="123456789" disabled size="30"></td>
+                </tr>
+                <tr>
+                    <td>Alamat Mahasiswa</td>
+                    <td>:</td>
+                    <td><textarea rows="5" cols="40" name="alamat" placeholder="Alamat Anda" required></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label">Tanggal Lahir</td>
+                    <td class="colon">:</td>
+                    <td>
+                        <select name="tgl_lahir">
+                            <script>
+                                for (let d = 1; d <= 31; d++) {
+                                    document.write('<option value="' + d + '"' + (d === 1 ? ' selected' : '') + '>' + String(d).padStart(2, '0') + '</option>');
+                                }
+                            </script>
+                        </select>
+                        <select name="bulan_lahir">
+                            <option value="1" selected>Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                            <option value="4">April</option>
+                            <option value="5">Mei</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">Agustus</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                        </select>
+                        <select name="tahun_lahir">
+                            <script>
+                                for (let y = 2026; y >= 1970; y--) {
+                                    document.write('<option value="' + y + '"' + (y === 1990 ? ' selected' : '') + '>' + y + '</option>');
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" id="pria" name="gender" value="Pria" checked>
+                        <label for="pria">Pria</label>
+                        <input type="radio" id="wanita" name="gender" value="Wanita">
+                        <label for="wanita">Wanita</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload Foto</td>
+                    <td>:</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td>URL Website</td>
+                    <td>:</td>
+                    <td><input type="url" placeholder="URL Website Anda" size="45"></td>
+                </tr>
+                <tr>
+                    <td>Perguruan Tinggi</td>
+                    <td>:</td>
+                    <td><input type="text" size="25"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <!-- Section Info Akun -->
+        <fieldset>
+            <legend>Info Akun</legend>
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><input type="email" placeholder="Email Anda" size="25"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td>:</td>
+                    <td><input type="text" placeholder="Username Anda" size="25"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>:</td>
+                    <td><input type="password" placeholder="Password Anda" size="25"></td>
+                </tr>
+                <tr>
+                    <td>Ulangi Password</td>
+                    <td>:</td>
+                    <td><input type="password" placeholder="Password Anda" size="25"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <!-- Section Kemampuan Dasar -->
+        <fieldset>
+            <legend>Kemampuan Dasar</legend>
+            <label><input type="checkbox" name="skill" value="HTML">HTML</label>
+            <label><input type="checkbox" name="skill" value="CSS">CSS</label>
+            <label><input type="checkbox" name="skill" value="Javascript">Javascript</label>
+            <label><input type="checkbox" name="skill" value="PHP">PHP</label>
+            <label><input type="checkbox" name="skill" value="MySQL">MySQL</label>
+            <label><input type="checkbox" name="skill" value="Laravel">Laravel</label>
+            <label><input type="checkbox" name="skill" value="React Native">React Native</label>
+        </fieldset>
+
+        <!-- Tombol Aksi -->
+        <div class="btn-group">
+            <input type="reset" value="Reset">
+            <input type="submit" name="btn_simpan" value="Simpan Data">
+            <input type="button" value="Button">
+        </div>
+
+    </form>
+
+</body>
+</html>
+<nav>| 
+  <a href="form.html">Form Registrasi</a> | 
+  <a href="semantic.html">Semantic HTML</a> | 
+
+</nav>
+<hr>
